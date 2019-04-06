@@ -15,7 +15,7 @@ void ListenForData()
     try
     {
         socketConnection = new TcpClient("https://keystrokestestesecenas.netlify.com/", 1337);
-        Byte[] bytes = new Byte[1024];
+        var bytes = new Byte[1024];
         while (true)
         {
 
