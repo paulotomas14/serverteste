@@ -14,7 +14,8 @@ const socket = new jSocket();
 function main(){
   console.log("Hello world");
 	ListenForData();
-};
+}
+
 
 
 void ListenForData(){
