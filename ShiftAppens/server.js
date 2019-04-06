@@ -20,6 +20,7 @@ const app = express();
 //ES6 Promises
 
 mongoose.Promise = global.Promise;
+console.log("BATEU");
 mongoose.connect('mongodb://keystrokestestesecenas.netlify.com/shift',{useNewUrlParser:true});
 
 mongoose.connection.once('open',function(){
