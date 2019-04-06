@@ -18,7 +18,7 @@ function main(){
 
 
 
-void ListenForData(){
+function ListenForData(){
 	// When the socket is added the to document
 	socket.onReady = function(){
 					socket.connect(host, port);
