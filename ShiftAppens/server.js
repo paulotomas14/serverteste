@@ -25,7 +25,7 @@ console.log("BATEU");
 const MongoClient = require(‘mongodb’).MongoClient;
 const uri = ;
 
-mongoose.connect('mongodb+srv://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
+mongoose.connect('mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
 
 mongoose.connection.once('open',function(){
   console.log("successfully connected to database");
