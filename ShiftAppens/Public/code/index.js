@@ -9,15 +9,24 @@ const host = 'https://keystrokestestesecenas.netlify.com/';
 
 function main(){
   console.log("Hello world");
-	post_stuff();
+	var start=window.getElementById("yes-drop");
+	post_stuff(start);
 }
 
-function post_stuff(){
+function post_stuff(start){
+	start.addEventListener('click',(e)=>{
+		funcao_teste(e);
+	});
+
+}
+
+function funcao_teste(e){
 	$.post({
-	        url: host,
-	        type: 'POST',
-	        contentType: 'application/json',
-	        data: JSON.stringify({name: "viewedProfiles"}),
-	        success: function(response){ console.log(response)}
-});
+					url: host,
+					type: 'POST',
+					contentType: 'application/json',
+					data: JSON.stringify({name: "viewedProfiles"}),
+					success: function(response){ console.log(response)}
+	});
+
 }
