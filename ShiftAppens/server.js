@@ -23,7 +23,7 @@ mongoose.Promise = global.Promise;
 console.log("BATEU");
 
 const MongoClient = require(‘mongodb’).MongoClient;
-const uri = ;
+
 const index_file=path.join(__dirname,'index.html');
 mongoose.connect('mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true/shift',{useNewUrlParser:true});
 
@@ -60,13 +60,6 @@ function create_user(u_name){
   });
 }
 
-var server = net.createServer(function(socket) {
-	socket.write(count);
-	socket.pipe(socket);
-});
-server.listen(1337, 'https://keystrokestestesecenas.netlify.com/');
-
-
 app.use('/static',express.static('public'));
 
 app.get('/',function(req,res){
@@ -75,7 +68,7 @@ app.get('/',function(req,res){
   count++;
 
   create_user(String(count));
-
+  res.send(count);
 
 });
 app.listen(80);
