@@ -8,8 +8,7 @@
 function main(){
   console.log("Hello world");
 	ListenForData();
-	});
-}
+};
 
 private void ListenForData()
 {
