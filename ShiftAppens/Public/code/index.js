@@ -10,7 +10,7 @@ function main(){
 	ListenForData();
 };
 
-private void ListenForData()
+void ListenForData()
 {
     try
     {
