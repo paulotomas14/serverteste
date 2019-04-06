@@ -13,7 +13,7 @@ function main(){
 }
 
 function post_stuff(){
-	$.ajax({
+	$.post({
 	        url: host,
 	        type: 'POST',
 	        contentType: 'application/json',
