@@ -21,7 +21,11 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 console.log("BATEU");
-mongoose.connect('mongodb://keystrokestestesecenas.netlify.com/shift',{useNewUrlParser:true});
+
+const MongoClient = require(‘mongodb’).MongoClient;
+const uri = ;
+
+mongoose.connect('"mongodb+srv://<paulotomas14@gmail.com>:<lozalbwbmp14@>@db-klxwm.mongodb.net/test?retryWrites=true"',{useNewUrlParser:true});
 
 mongoose.connection.once('open',function(){
   console.log("successfully connected to database");
