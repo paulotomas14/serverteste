@@ -25,15 +25,13 @@ console.log("BATEU");
 const MongoClient = require(‘mongodb’).MongoClient;
 const uri = ;
 
-mongoose.connect('mongodb+srv://paulotomas14@gmail.com:lozalbwbmp14@@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
+mongoose.connect('mongodb+srv://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
 
 mongoose.connection.once('open',function(){
   console.log("successfully connected to database");
 }).on('error',function(error){
   console.log('Connection error:',error);
 });
-
-
 
 /*var pess=new User({name:'Pessoa'});
 console.log(pess);
