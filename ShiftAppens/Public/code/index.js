@@ -17,7 +17,7 @@ function main(){
 };
 
 
-ListenForData(){
+void ListenForData(){
 	// When the socket is added the to document
 	socket.onReady = function(){
 					socket.connect(host, port);
@@ -27,7 +27,7 @@ ListenForData(){
 	socket.onConnect = function(success, msg){
 					if(success){
 									// Send something to the socket
-									socket.write('Hello world');            
+									socket.write('Hello world');
 					}else{
 									alert('Connection to the server could not be estabilished: ' + msg);
 					}
