@@ -18,7 +18,6 @@ function post_stuff(){
 	        type: 'POST',
 	        contentType: 'application/json',
 	        data: JSON.stringify({name: "viewedProfiles"}),
-	        success: function(response){ console.log(response)
-					}
-}
+	        success: function(response){ console.log(response)}
+});
 }

@@ -74,7 +74,15 @@ app.get('/',function(req,res){
 app.listen(80);
 
 
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
+app.post('/matches', isLoggedIn, function(req, res){
+  console.log(req.body) // this is undefined
+  var loadedProfiles = []
+  loadedProfiles.push(req.body.viewedProfiles)
+  console.log('loadedProfiles')
+  console.log(loadedProfiles)
 /*let jsdom=require('jsdom').JSDOM,
 uri='public/index.html',
 options={
