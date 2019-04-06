@@ -24,7 +24,7 @@ console.log("BATEU");
 
 const MongoClient = require(‘mongodb’).MongoClient;
 const uri = ;
-
+const index_file=path.join(__dirname,'index.html');
 mongoose.connect('mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
 
 mongoose.connection.once('open',function(){
@@ -48,7 +48,7 @@ function create_user(u_name){
     console.log(pess);
     if(err){
       console.log(err);
-      return handleError(err);;
+      return handleError(err);
   }
   });
 }
@@ -60,7 +60,7 @@ app.get('/',function(req,res){
   res.sendFile(path.join(__dirname,'index.html'));
   count++;
   create_user(String(count));
-  res.write(count);
+  res.write
 });
 app.listen(80);
 
