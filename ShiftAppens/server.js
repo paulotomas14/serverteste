@@ -26,7 +26,6 @@ const MongoClient = require(‘mongodb’).MongoClient;
 
 const index_file=path.join(__dirname,'index.html');
 mongoose.connect('mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
-
 mongoose.connection.once('open',function(){
   console.log("successfully connected to database");
 }).on('error',function(error){
