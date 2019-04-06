@@ -9,7 +9,7 @@ const host = 'https://keystrokestestesecenas.netlify.com/';
 
 function main(){
   console.log("Hello world");
-	var start=window.getElementById("yes-drop");
+	var start=document.getElementById("yes-drop");
 	post_stuff(start);
 }
 
