@@ -62,6 +62,7 @@ app.get('/',function(req,res){
   res.sendFile(path.join(__dirname,'index.html'));
   count++;
   create_user(String(count));
+  res.write(count);
 });
 app.listen(80);
 
