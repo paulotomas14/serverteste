@@ -10,7 +10,7 @@ const mocha = require('mocha');
 const assert=require('assert');
 const User=require('./models/users');
 
-
+var count=0;
 
 
 
@@ -33,13 +33,7 @@ mongoose.connection.once('open',function(){
   console.log('Connection error:',error);
 });
 
-User.create({name:'Rui'},(err,pess)=>{
-  console.log(pess);
-  if(err){
-    console.log(err);
-    return handleError(err);;
-}
-});
+
 
 /*var pess=new User({name:'Pessoa'});
 console.log(pess);
@@ -51,11 +45,23 @@ pess.save((err)=>{
   console.log("BATEU");
 });*/
 
+function create_user(u_name){
+  User.create({name:u_name},(err,pess)=>{
+    console.log(pess);
+    if(err){
+      console.log(err);
+      return handleError(err);;
+  }
+  });
+}
+
 
 app.use('/static',express.static('public'));
 
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname,'index.html'));
+  count++;
+  create_user(String(count));
 });
 app.listen(80);
 
