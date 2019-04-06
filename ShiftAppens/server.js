@@ -20,7 +20,7 @@ const app = express();
 //ES6 Promises
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/shift',{useNewUrlParser:true});
+mongoose.connect('mongodb://keystrokestestesecenas.netlify.com/shift',{useNewUrlParser:true});
 
 mongoose.connection.once('open',function(){
   console.log("successfully connected to database");
@@ -52,7 +52,7 @@ app.use('/static',express.static('public'));
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname,'index.html'));
 });
-app.listen(8080);
+app.listen(80);
 
 /*let jsdom=require('jsdom').JSDOM,
 uri='public/index.html',
