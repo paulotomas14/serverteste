@@ -24,7 +24,7 @@ function funcao_teste(e){
 
 	$.ajax(
 	{
-					url: "https://keystrokestestesecenas.netlify.com/public/code/index.js",
+					url: "/",
 					type: 'POST',
 					contentType: 'application/json',
 					'X-Requested-With': 'XMLHttpRequest',

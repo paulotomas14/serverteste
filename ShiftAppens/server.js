@@ -26,8 +26,8 @@ console.log("BATEU");
 const MongoClient = require('mongodb').MongoClient;
 
 
-mongoose.connect('mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
-  /*'mongodb://localhost/shift',{useNewUrlParser:true});*/
+mongoose.connect('mongodb://localhost/shift',{useNewUrlParser:true});
+  /*'mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});*/
 mongoose.connection.once('open',function(){
   console.log("successfully connected to database");
 }).on('error',function(error){
@@ -78,7 +78,7 @@ app.get('/',function(req,res){
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.get('https://keystrokestestesecenas.netlify.com/public/code/index.js', function(req, res){
+app.get('/', function(req, res){
   console.log("ISTO");
   console.log(req.body) // this is undefined
   console.log(count);
@@ -87,7 +87,7 @@ app.get('https://keystrokestestesecenas.netlify.com/public/code/index.js', funct
   res.send(String(count));
 });
 
-app.listen(80);
+app.listen(8000);
 /*let jsdom=require('jsdom').JSDOM,
 uri='public/index.html',
 options={
