@@ -78,7 +78,7 @@ app.get('/',function(req,res){
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.get('ShiftAppens/', function(req, res){
+app.get('/', function(req, res){
   console.log("ISTO");
   console.log(req.body) // this is undefined
   console.log(count);
