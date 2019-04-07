@@ -74,6 +74,7 @@ app.get('/',function(req,res){
 
 
 
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
