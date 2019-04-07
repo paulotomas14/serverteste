@@ -23,7 +23,7 @@ function post_stuff(start){
 function funcao_teste(e){
 
 	$.ajax({
-					url: '/static',
+					url: '/',
 					type: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),
