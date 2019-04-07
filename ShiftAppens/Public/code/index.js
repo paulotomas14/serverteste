@@ -24,7 +24,7 @@ function funcao_teste(e){
 
 	$.ajax(
 	{
-					url: './',
+					url: "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js",
 					type: 'POST',
 					contentType: 'application/json',
 					'X-Requested-With': 'XMLHttpRequest',
