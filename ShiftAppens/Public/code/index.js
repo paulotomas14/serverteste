@@ -23,7 +23,7 @@ function post_stuff(start){
 function funcao_teste(e){
 	console.log("bateu");
 	$.post({
-					url: host,
+					url: '/public',
 					type: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),

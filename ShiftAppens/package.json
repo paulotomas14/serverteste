@@ -9,6 +9,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "css": "^2.2.4",
     "fs": "0.0.1-security",
     "jsdom": "^14.0.0",

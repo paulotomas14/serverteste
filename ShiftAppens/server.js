@@ -10,6 +10,7 @@ const mocha = require('mocha');
 const assert=require('assert');
 const User=require('./models/users');
 const net = require('net');
+const bodyParser = require('body-parser');
 var count=0;
 
 
@@ -22,10 +23,11 @@ const app = express();
 mongoose.Promise = global.Promise;
 console.log("BATEU");
 
-const MongoClient = require(‘mongodb’).MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 
-const index_file=path.join(__dirname,'index.html');
+
 mongoose.connect('mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});
+  /*'mongodb://localhost/shift',{useNewUrlParser:true});*/
 mongoose.connection.once('open',function(){
   console.log("successfully connected to database");
 }).on('error',function(error){
@@ -51,6 +53,7 @@ pess.save((err)=>{
 
 function create_user(u_name){
   User.create({name:u_name},(err,pess)=>{
+    console.log("OLA");
     console.log(pess);
     if(err){
       console.log(err);
@@ -64,26 +67,26 @@ app.use('/static',express.static('public'));
 app.get('/',function(req,res){
 
   res.sendFile(path.join(__dirname,'index.html'));
-  count++;
 
-  create_user(String(count));
-  res.send(count);
+  //res.sendStatus(count);
 
 });
-app.listen(80);
+
 
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.post('/public', isLoggedIn, function(req, res){
+app.post('/public', function(req, res){
+  console.log("ISTO");
   console.log(req.body) // this is undefined
-  var loadedProfiles = []
-  loadedProfiles.push(req.body.viewedProfiles)
-  console.log('loadedProfiles')
-  console.log(loadedProfiles)
-  res.send(count);
+  console.log(count);
+  count++;
+  create_user(String(count));
+  res.send(String(count));
 });
+
+app.listen(80);
 /*let jsdom=require('jsdom').JSDOM,
 uri='public/index.html',
 options={
