@@ -23,7 +23,7 @@ function post_stuff(start){
 function funcao_teste(e){
 
 	$.ajax({
-					url: '/',
+					url: '/jquery.min.js',
 					type: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),
