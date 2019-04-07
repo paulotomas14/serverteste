@@ -24,7 +24,7 @@ function funcao_teste(e){
 
 	$.ajax(
 	{
-					url: "/",
+					url: "(index)",
 					type: 'POST',
 					contentType: 'application/json',
 					'X-Requested-With': 'XMLHttpRequest',
