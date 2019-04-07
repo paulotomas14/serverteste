@@ -34,7 +34,7 @@ function funcao_teste(e){
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),
 					success: function(response){ console.log(response)},
-					failure: function(){console.log("CARALHAO")}
+					failure: function(err){console.log(err)}
 
 	});
 		console.log("bateu");
