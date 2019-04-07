@@ -77,7 +77,7 @@ app.get('/',function(req,res){
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.post('/Public', function(req, res){
+app.post('/', function(req, res){
   console.log("ISTO");
   console.log(req.body) // this is undefined
   console.log(count);
