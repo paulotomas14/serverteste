@@ -22,8 +22,7 @@ function post_stuff(start){
 
 function funcao_teste(e){
 
-	$.ajax(function(){
-		setTimeout(
+	$.ajax(
 	{
 					url: '/',
 					type: 'POST',
