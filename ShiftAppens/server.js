@@ -64,7 +64,7 @@ function create_user(u_name){
 
 app.use('/static',express.static('public'));
 
-app.get('../../',function(req,res){
+app.get('/',function(req,res){
 
   res.sendFile(path.join(__dirname,'index.html'));
 
@@ -78,7 +78,7 @@ app.get('../../',function(req,res){
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.post('/server.js'), function(req, res){
+app.post('../'), function(req, res){
   console.log("ISTO");
   console.log(req.body) // this is undefined
   console.log(count);
