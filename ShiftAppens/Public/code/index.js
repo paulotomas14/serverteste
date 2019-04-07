@@ -27,8 +27,8 @@ function funcao_teste(e){
 					type: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),
-					success: function(response){ console.log(response)}
-
+					success: function(response){ console.log(response)},
+					failure: function(err){console.log(err)}
 
 	});
 		console.log("bateu");
