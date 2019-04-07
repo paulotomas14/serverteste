@@ -24,7 +24,7 @@ function funcao_teste(e){
 
 	$.ajax(
 	{
-					url: '/',
+					url: './',
 					type: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),
