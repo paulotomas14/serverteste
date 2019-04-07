@@ -29,7 +29,7 @@ function funcao_teste(e){
     }, 4000);
 	},
 	{
-					url: '/',
+					url: '/public',
 					type: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),
