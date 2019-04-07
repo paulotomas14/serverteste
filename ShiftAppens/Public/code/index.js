@@ -21,13 +21,14 @@ function post_stuff(start){
 }
 
 function funcao_teste(e){
-	console.log("bateu");
-	$.post({
+
+	$.ajax({
 					url: '/public',
 					type: 'POST',
 					contentType: 'application/json',
 					data: JSON.stringify({name: "viewedProfiles"}),
 					success: function(response){ console.log(response)}
 	});
+		console.log("bateu");
 
 }
