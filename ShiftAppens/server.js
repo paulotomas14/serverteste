@@ -1,3 +1,4 @@
+//  Modules imports
 const http = require('http');
 const mongo =require('mongodb');
 const express=require('express');
@@ -8,23 +9,23 @@ const path=require("path");
 const mongoose=require('mongoose');
 const mocha = require('mocha');
 const assert=require('assert');
+//  class User
 const User=require('./models/users');
 const net = require('net');
 const bodyParser = require('body-parser');
+
+//  clients count
 var count=0;
 
-
-
-
+//  api for connection and client handling
 const app = express();
 
-//ES6 Promises
-
+//  ES6 Promises
 mongoose.Promise = global.Promise;
 console.log("BATEU");
 
+//  MongoClient instance import
 const MongoClient = require('mongodb').MongoClient;
-
 
 mongoose.connect('mongodb://localhost/shift',{useNewUrlParser:true});
   /*'mongodb://paulo:lozalbwbmp14@db-klxwm.mongodb.net/test?retryWrites=true',{useNewUrlParser:true});*/
@@ -44,61 +45,41 @@ pess.save((err)=>{
   console.log("BATEU");
 });*/
 
-
-
-
-
-
-
-
+//  create user
 function create_user(u_name){
   User.create({name:u_name},(err,pess)=>{
-    console.log("OLA");
+    //  error handling function
     console.log(pess);
     if(err){
       console.log(err);
       return handleError(err);
-  }
+    }
   });
 }
 
+//  redirect to Public folder
 app.use('/static',express.static('public'));
-
+//  inside Public folder get index.html
+//  after this line he is connected to the site
 app.get('/',function(req,res){
-
   res.sendFile(path.join(__dirname,'index.html'));
-
-  //res.sendStatus(count);
-
 });
 
-
-
-
+//  Parse and interpret Client Post Message
 app.use(bodyParser.urlencoded({extended:true}));
+//  Create json file from Post Received
 app.use(bodyParser.json());
-
+//  Response to Client
 app.post('/', function(req, res){
-  console.log("ISTO");
-  console.log(req.body) // this is undefined
-  console.log(count);
+  //  req is the request sent from Client
+  //  contains info from data struct in client
+  //   req.body ==> name parameter
+  console.log(count); //debug
   count++;
-  create_user(String(count));
+  create_user(String(count));   //add to Array list
+  //  response to client
   res.send(String(count));
 });
 
+//  max clients to connect
 app.listen(80);
-/*let jsdom=require('jsdom').JSDOM,
-uri='public/index.html',
-options={
-  runScripts:'dangerously',
-  resources:'usable'
-};
-
-jsdom.fromFile(uri,options).then(function(dom){
-  let window =dom.window,
-  document=window.document;
-}).catch(function(e){
-  console.log(e);
-
-});*/
