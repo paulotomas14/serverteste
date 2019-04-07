@@ -30,7 +30,11 @@ function funcao_teste(e){
 					data: JSON.stringify({name: "viewedProfiles"}),
 					success: function(response){
 						 console.log(response)},
-					failure: function(err){console.log(err)}
+					error:function (xhr, ajaxOptions, thrownError){
+	     if(xhr.status==404) {
+	         alert(thrownError);
+	     }
+	 }
 	});
 
 		console.log("bateu");
