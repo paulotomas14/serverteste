@@ -27,6 +27,7 @@ function funcao_teste(e){
 					url: './',
 					type: 'POST',
 					contentType: 'application/json',
+					'X-Requested-With': 'XMLHttpRequest',
 					data: JSON.stringify({name: "viewedProfiles"}),
 					success: function(response){
 						 console.log(response)},
