@@ -32,6 +32,7 @@ function funcao_teste(e){
 					failure: function(err){console.log(err)}
 
 	});
+		res.send(200);
 		console.log("bateu");
 
 }
