@@ -77,7 +77,7 @@ app.get('/',function(req,res){
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-app.post('/static', function(req, res){
+app.post('/', function(req, res){
   console.log("ISTO");
   console.log(req.body) // this is undefined
   console.log(count);
@@ -86,7 +86,7 @@ app.post('/static', function(req, res){
   res.send(String(count));
 });
 
-app.listen(80);
+app.listen(8080);
 /*let jsdom=require('jsdom').JSDOM,
 uri='public/index.html',
 options={
