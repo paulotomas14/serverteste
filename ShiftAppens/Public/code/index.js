@@ -22,7 +22,12 @@ function post_stuff(start){
 
 function funcao_teste(e){
 
-	$.ajax({
+	$.ajax(()=>{
+		setTimeout(function() {
+        $(this).attr('disabled', false);
+        $(this).val('Submit');
+    }, 4000);
+	}{
 					url: '/',
 					type: 'POST',
 					contentType: 'application/json',
