@@ -23,11 +23,7 @@ function post_stuff(start){
 function funcao_teste(e){
 
 	$.ajax(function(){
-		setTimeout(function() {
-        $(this).attr('disabled', false);
-        $(this).val('Submit');
-    }, 4000);
-	},
+		setTimeout(
 	{
 					url: '/',
 					type: 'POST',
